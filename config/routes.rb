@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :discounts
   devise_for :users
   resources :items
   root to: 'items#index'
