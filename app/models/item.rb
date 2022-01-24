@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Item < ApplicationRecord
-  validates_presence_of :name, :code, :price
+  validates :name, :code, :price, presence: true
 end
