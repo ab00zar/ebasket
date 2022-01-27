@@ -78,3 +78,10 @@ group :development, :test do
 end
 
 gem 'devise'
+
+# Pry family
+gem 'pry'
+gem 'pry-nav'
+gem 'pry-rails'
+gem 'pry-remote'
+gem 'pry-stack_explorer'
