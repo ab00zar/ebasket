@@ -5,5 +5,5 @@ class Item < ApplicationRecord
 
   has_many :basket_items, dependent: :delete_all
   has_many :baskets, through: :basket_items
-  has_one :discount, dependent: :nullify
+  belongs_to :discount
 end

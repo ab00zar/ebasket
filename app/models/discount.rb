@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class Discount < ApplicationRecord
-  belongs_to :items
+  has_many :items
 end
