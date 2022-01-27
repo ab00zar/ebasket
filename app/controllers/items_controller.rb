@@ -3,6 +3,16 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
+  def add_to_basket
+    basket = current_user.basket
+    Items::AddToBasketService.new(params[:id], basket).call
+
+    price = basket.basket_items.sum(:price)
+    final_price = basket.basket_items.sum(:final_price)
+
+    basket.update(price: price, final_price: final_price)
+  end
+
   # GET /items or /items.json
   def index
     @items = Item.all
