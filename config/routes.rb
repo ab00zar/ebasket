@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       get ':id/add_to_basket' => 'items#add_to_basket'
     end
   end
+
+  get 'my_basket' => 'baskets#show'
 end

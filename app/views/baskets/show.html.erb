@@ -1,0 +1,22 @@
+<% @basket_items.each do |basket_item| %>
+Product:
+<%= basket_item.item.name %>
+<hr>
+Quantity:
+<%= basket_item.quantity %>
+<hr>
+Price:
+<%= basket_item.price %>
+<hr>
+Discounted Price:
+<%= basket_item.final_price %>
+<hr>
+<% end %>
+<hr>
+<hr>
+Price:
+<%= @basket.price %>
+<hr>
+Discounted Price:
+<%= @basket.final_price %>
+<hr>
