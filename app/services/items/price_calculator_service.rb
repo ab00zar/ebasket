@@ -16,8 +16,8 @@ module Items
 
     private
 
-    def final_price(discounted_price_service: Discounts::DiscountedPriceService.new)
-      @item.discount.present? ? discounted_price_service.call(@item, @basket_item) : general_price
+    def final_price(discounted_price_service: Discounts::DiscountedPriceService)
+      @item.discount.present? ? discounted_price_service.new(@item, @basket_item).call : general_price
     end
 
     def general_price
