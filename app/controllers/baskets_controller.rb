@@ -4,7 +4,7 @@ class BasketsController < ApplicationController
   before_action :set_basket, only: %i[show]
 
   def show
-    @basket_items = @basket.basket_items
+    @basket_items = @basket.basket_items.order(updated_at: :asc)
   end
 
   private
