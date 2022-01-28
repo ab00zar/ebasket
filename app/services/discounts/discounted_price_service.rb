@@ -27,7 +27,7 @@ module Discounts
     end
 
     def buy3paytwothirds(item, basket_item)
-      basket_item.quantity >= 3 ? (basket_item.quantity * 0.66 * item.price) : normal_price(item, basket_item)
+      basket_item.quantity >= 3 ? (basket_item.quantity * (2.0/3.0) * item.price) : normal_price(item, basket_item)
     end
   end
 end
