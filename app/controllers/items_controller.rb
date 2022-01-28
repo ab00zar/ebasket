@@ -2,15 +2,20 @@
 
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
+  before_action :set_basket, only: %i[add_to_basket]
 
   def add_to_basket
-    basket = current_user.basket
-    Items::AddToBasketService.new(params[:id], basket).call
+    if Items::AddToBasketService.new(params[:id], @basket).call
 
-    price = basket.basket_items.sum(:price)
-    final_price = basket.basket_items.sum(:final_price)
+      price = @basket.basket_items.sum(:price)
+      final_price = @basket.basket_items.sum(:final_price)
 
-    basket.update(price: price, final_price: final_price)
+      if @basket.update(price: price, final_price: final_price)
+        respond_to do |format|
+          format.html { redirect_to my_basket_path, notice: 'Item was successfully added to the basket.' }
+        end
+      end
+    end
   end
 
   # GET /items or /items.json
@@ -68,6 +73,10 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def set_basket
+    @basket = Basket.first
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_item
