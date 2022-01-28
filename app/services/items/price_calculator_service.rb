@@ -21,7 +21,7 @@ module Items
     end
 
     def general_price
-      @basket_item.final_price + @item.price
+      @basket_item.quantity * @item.price
     end
   end
 end
