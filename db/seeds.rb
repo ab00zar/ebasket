@@ -8,9 +8,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Items
-Item.find_or_create_by(name:'Green Tea', code: 'GR1', price: 3.11, discount_id: 1, photo: 'https://images.app.goo.gl/P6kA2xEd2JABkqsr9')
-Item.find_or_create_by(name:'Strawberries', code: 'SR1', price: 5.00, discount_id: 2, photo: 'https://images.app.goo.gl/XUk5LFLrg1jxyX5W8')
-Item.find_or_create_by(name:'Coffee', code: 'CF1', price: 11.23, discount_id: 3, photo: 'https://images.app.goo.gl/c7pPtbov1iKJVNa18')
+Item.find_or_create_by(name:'Green Tea', code: 'GR1', price: 3.11, discount_id: 1, photo: 'https://www.lipton.com/content/dam/unilever/lipton_international/united_states_of_america/pack_shot/041000671517.01-39537116-png.png')
+Item.find_or_create_by(name:'Strawberries', code: 'SR1', price: 5.00, discount_id: 2, photo: 'https://www.gardeningknowhow.com/wp-content/uploads/2021/07/ripe-red-strawberries.jpg')
+Item.find_or_create_by(name:'Coffee', code: 'CF1', price: 11.23, discount_id: 3, photo: 'https://www.tastingtable.com/img/gallery/coffee-brands-ranked-from-worst-to-best/intro-1640648130.jpg')
 
 # Discounts
 Discount.find_or_create_by(id: 1, name: 'buy1get1', description: 'buy-one-get-one-free')
