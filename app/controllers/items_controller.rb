@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show edit update destroy]
+  before_action :set_item, only: %i[show edit update destroy add_to_basket]
   before_action :set_basket, only: %i[add_to_basket]
 
   def add_to_basket
-    if Items::AddToBasketService.new(params[:id], @basket).call
+    if Items::AddToBasketService.new(@item, @basket).call
       if Baskets::UpdatePriceService.new(@basket).call
         respond_to do |format|
           format.html { redirect_to my_basket_path, notice: 'Item was successfully added to the basket.' }
