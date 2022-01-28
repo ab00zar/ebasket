@@ -10,6 +10,6 @@ class BasketsController < ApplicationController
   private
 
   def set_basket
-    @basket = current_user.basket
+    @basket = Basket.first
   end
 end

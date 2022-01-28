@@ -77,8 +77,6 @@ group :development, :test do
   gem 'rubocop-rspec', require: false
 end
 
-gem 'devise'
-
 # Pry family
 gem 'pry'
 gem 'pry-nav'

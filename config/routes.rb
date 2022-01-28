@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   resources :discounts
 
-  devise_for :users
-
   resources :items do
     collection do
       get ':id/add_to_basket' => 'items#add_to_basket'
