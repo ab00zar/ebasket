@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, {class: "form-label" } %>
+    <%= form.text_field :name, {class: "form-control"} %>
   </div>
 
   <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+    <%= form.label :code, {class: "form-label" } %>
+    <%= form.text_field :code, {class: "form-control"} %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.label :price, {class: "form-label" } %>
+    <%= form.number_field :price, {class: "form-control"} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :discount %>
+    <%= form.select :discount_id, Discount.all.pluck(:name,:id),{prompt:'select'},{class: "form-control"} %>
   </div>
 
   <div class="actions">
