@@ -1,22 +1,43 @@
-<% @basket_items.each do |basket_item| %>
-Product:
-<%= basket_item.item.name %>
-<hr>
-Quantity:
-<%= basket_item.quantity %>
-<hr>
-Price:
-<%= basket_item.price %>
-<hr>
-Discounted Price:
-<%= basket_item.final_price %>
-<hr>
-<% end %>
-<hr>
-<hr>
-Price:
-<%= @basket.price %>
-<hr>
-Discounted Price:
-<%= @basket.final_price %>
-<hr>
+<div class="container">
+  <div class="row align-items-start">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Code</th>
+        <th scope="col">Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">To Pay (with discount)</th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @basket_items.each do |basket_item| %>
+          <tr>
+            <td><img src="<%= basket_item.item.photo %>" class="card-img-top" alt="..." style="height: 50px; width: 50px;"></td>
+            <td><%= basket_item.item.code %></td>
+            <td><%= basket_item.item.name %></td>
+            <td><%= basket_item.quantity %></td>
+            <td><%= basket_item.price %></td>
+            <td><%= basket_item.final_price %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <table>
+      <tr>
+        <td><h5>Price:</h5></td>
+        <td><h5><%= @basket.price %></h5></td>
+      </tr>
+      <tr>
+        <td><h5>To Pay (with discount):</h5></td>
+        <td><h5><%= @basket.final_price %></h5></td>
+      </tr>
+    </table>
+
+    <%= link_to 'Continue Shopping', root_path %>
+  </div>
+</div>
+
+
+
