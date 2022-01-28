@@ -1,24 +1,7 @@
-# README
+# Ebasket
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a simple e-basket with the possibility of adding products into it
+considering different discount options. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The deployed version on Heroku is available here:
+https://ebasket2022.herokuapp.com/
