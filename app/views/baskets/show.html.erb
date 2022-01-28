@@ -34,10 +34,11 @@
         <td><h5><%= @basket.final_price %></h5></td>
       </tr>
     </table>
-
-    <%= link_to 'Continue Shopping', root_path %>
+    <div>
+      <br>
+      <%= link_to 'Continue Shopping', root_path %>
+      <br>
+      <%= link_to 'Reset Basket', reset_path %>
+    </div>
   </div>
 </div>
-
-
-

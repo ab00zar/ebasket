@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
 
   get 'my_basket' => 'baskets#show'
+  get 'reset' => 'baskets#reset'
 end
