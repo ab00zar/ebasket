@@ -6,11 +6,7 @@ class ItemsController < ApplicationController
 
   def add_to_basket
     if Items::AddToBasketService.new(params[:id], @basket).call
-
-      price = @basket.basket_items.sum(:price)
-      final_price = @basket.basket_items.sum(:final_price)
-
-      if @basket.update(price: price, final_price: final_price)
+      if Baskets::UpdatePriceService.new(@basket).call
         respond_to do |format|
           format.html { redirect_to my_basket_path, notice: 'Item was successfully added to the basket.' }
         end
